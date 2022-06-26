@@ -1,0 +1,51 @@
+* Model
+1. Setup redux store
+	- Reducers & Root reducer
+	- Action creators
+	- Store
+
+2. Setup redux provider
+	- 
+
+************************************************************
+
+* reducers: receive 2 parameter, first one is initialization that can be created at the same file
+	- hobbyReducer.js
+	- userReducer.js			// reducer for user
+
+	- index.js					// Combine all of the reducers (root reducer)
+
+
+* actions				
+	- hobbyAction.js			// separate data value for dispatch at view
+			{
+				type: TYPE.ADD,
+				payload: {
+					value..
+				}
+			}
+
+
+	- userAction.js
+
+	=> help to call dispatch at view easily
+
+
+* store.js			// Create store for root reducer
+
+* Index.js
+	=> Wrap the app at Index.js file by Provider that is property of "react-redux", and transfer store into the Provider property
+
+
+************************************************************
+1. Reducer
+	- userReducer.js: contains reducer like normal
+	- rootReducer: using combineReducers(method of redux) to combine all of reducers into rootReducers
+
+2. store.js: using createStore(method of redux) to create big store
+3. Actions
+	- userAction.js: for each Areducer we will have a Aaction. each action method in which return object {type: 'ADD_USER', payload: {...}}. This purpose help to split codes.
+
+4. App.js: using Provider (import from "react-redux") to wrap app the application with store from step 2
+	<Provider store={store}>
+	
